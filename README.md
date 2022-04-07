@@ -43,9 +43,9 @@ La prioridad es tener un JS sólido.
    -1.2 Un listado de resultados donde se pinte la imágen y el nombre de la bebida.
 
 2. Búsqueda
-   -2.1 Click en buscar -> conexión al API de bebidas.
+   - [x] - 2.1 Click en buscar -> conexión al API de bebidas.
    (www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita)
-   -2.2 Recoger el texto de la usuaria para construir la URL de búsqueda.
+   - [x] - 2.2 Recoger el texto de la usuaria para construir la URL de búsqueda.
    -2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda.
    -2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una 
    -2.5 Pintar en HTML con innerHTML o DOM.
