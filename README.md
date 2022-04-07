@@ -1,5 +1,5 @@
 # Evaluación final módulo 2 Patricia Pallarés González
-
+///
 Notas presentación enunciado:
 ASWK opcional
 
@@ -37,6 +37,7 @@ Interpretación del enunciado:
 Queremos una aplicación web que contenga un listado de bebidas internacionales, que permita a la user des/marcar sus favoritas y que se guarde en LocalStorage.
 
 La prioridad es tener un JS sólido.
+///
 
 1. Estructura básica en HTML
    - [x] - 1.1 Un input de texto y un botón para buscar bebidas por su nombre.
