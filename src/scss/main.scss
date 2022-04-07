@@ -6,3 +6,18 @@
   flex-direction: row;
   gap: 30px;
 }
+
+.drink_image{
+  width: 100px;
+}
+
+.drink_li{
+  list-style-type: none;
+}
+
+.drink_article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
