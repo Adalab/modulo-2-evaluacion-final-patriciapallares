@@ -8,7 +8,7 @@ La prioridad es tener un JS sólido.
 
 1. Estructura básica en HTML
    1.1 Un input de texto y un botón para buscar bebidas por su nombre.
-   [] H1, H2, input type text, button, ul, li
+   - [] H1, H2, input type text, button, ul, li
    1.2 Un listado de resultados donde se pinte la imágen y el nombre de la bebida.
 
 2. Búsqueda

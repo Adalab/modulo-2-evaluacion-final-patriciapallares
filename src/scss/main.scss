@@ -1,2 +1,8 @@
 // @import 'core/variables';
-// @import 'core/reset';
+@import 'core/reset';
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
