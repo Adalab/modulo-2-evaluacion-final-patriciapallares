@@ -44,15 +44,23 @@ function paintDrinks() {
   let html = '';
 
   for (const searchItem of searchArray) {
+    const placeholder =
+      `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
+
     html += `<li class ="drink_li" id=${searchItem.drinkId}>`;
     html += `<article class="drink_article">`;
-    html += `<img class ="drink_image" src="${searchItem.thumbnail}">`;
+    // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
+    if (searchItem.thumbnail !== '') {
+      html += `<img class ="drink_image" src="${searchItem.thumbnail}">`;
+    } else {
+      html += `<img class ="drink_image" src="${placeholder}">`;
+    }
     html += `<h3 class="drink_title">${searchItem.drinkName}</h3>`;
     html += `</article>`;
     html += `</li>`;
   }
   searchList.innerHTML = html;
-};
+}
 
 // function renderDrinksList(array) {
 //   searchList.innerHTML = '';
