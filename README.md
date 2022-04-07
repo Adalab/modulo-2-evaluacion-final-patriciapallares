@@ -39,8 +39,8 @@ Queremos una aplicación web que contenga un listado de bebidas internacionales,
 La prioridad es tener un JS sólido.
 
 1. Estructura básica en HTML
-   -1.1 Un input de texto y un botón para buscar bebidas por su nombre.
-   -1.2 Un listado de resultados donde se pinte la imágen y el nombre de la bebida.
+   - [x] - 1.1 Un input de texto y un botón para buscar bebidas por su nombre.
+   - [x] - 1.2 Un listado de resultados donde se pinte la imágen y el nombre de la bebida.
 
 2. Búsqueda
    - [x] - 2.1 Click en buscar -> conexión al API de bebidas.
