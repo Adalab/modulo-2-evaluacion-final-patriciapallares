@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('>> Ready :)');
-
 //variables
 
 const searchInput = document.querySelector('.js_search_input');
@@ -40,14 +38,35 @@ let favArray = [];
 
 //   return li;
 // };
+
+// function renderDrinksList(array) {
+//   searchList.innerHTML = '';
+//   for (const searchItem of array) {
+//     const drink = renderDrink(searchItem);
+//     searchList.appendChild(drink);
+//   };
+// };
+
+function handleClickDrinks(event) {
+  console.log(event.currentTarget.id);
+}
+
+// listener de las bebidas
+// UN PUTO PUNTO EN '.JS NO ME DEJABA AVANZARRRR
+function listenersDrinkItem() {
+  const liDrinks = document.querySelectorAll('.js_drinkItem');
+  for (const drink of liDrinks) {
+    drink.addEventListener('click', handleClickDrinks);
+  };
+};
+
+
 function paintDrinks() {
   let html = '';
-
   for (const searchItem of searchArray) {
-    const placeholder =
-      `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
+    const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
 
-    html += `<li class ="drink_li" id=${searchItem.drinkId}>`;
+    html += `<li class ="drink_li js_drinkItem" id=${searchItem.drinkId}>`;
     html += `<article class="drink_article">`;
     // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
     if (searchItem.thumbnail !== '') {
@@ -60,15 +79,8 @@ function paintDrinks() {
     html += `</li>`;
   }
   searchList.innerHTML = html;
-}
-
-// function renderDrinksList(array) {
-//   searchList.innerHTML = '';
-//   for (const searchItem of array) {
-//     const drink = renderDrink(searchItem);
-//     searchList.appendChild(drink);
-//   };
-// };
+  listenersDrinkItem();
+};
 
 function fetchFunction() {
   // pendiente entender bien cada paso de esto
@@ -87,8 +99,6 @@ function fetchFunction() {
         };
         return newDrink;
       });
-      console.log(searchArray);
-
       // no me las pintaba dentro de la función handleSearchClick pero sí aquí.
       paintDrinks(searchArray);
     });
@@ -96,9 +106,10 @@ function fetchFunction() {
 
 function handleSearchClick(event) {
   event.preventDefault();
-  console.log('Soy un click');
   fetchFunction();
 }
+
 //events
 
 searchBtn.addEventListener('click', handleSearchClick);
+
