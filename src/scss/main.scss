@@ -22,6 +22,8 @@
   align-items: center;
   margin: 5px 0;
   padding-top: 5px;
+  width: 17ch;
+  text-align: center;
 }
 
 .drink_image:hover, .drink_title:hover{
@@ -30,9 +32,11 @@
 
 .fav_drink{
   color: orangered;
+  width: 17ch;
   background-color: rgba(211, 211, 211, 0.461);
   outline: 2px solid orangered;
   border-radius: 10px;
+  text-align: center;
 }
 
 .hidden {

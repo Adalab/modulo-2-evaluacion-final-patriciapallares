@@ -44,7 +44,7 @@ function paintDrinks(array, list) {
 }
 
 function handleClickDrinks(event) {
-  console.log(event.currentTarget.id);
+  // console.log(event.currentTarget.id);
   // 3.1.1 Color de fondo y de fuente cambian.
   event.currentTarget.classList.toggle('fav_drink');
 
@@ -54,7 +54,7 @@ function handleClickDrinks(event) {
   // agregar al listado de favs
 
   const idDrinkSelected = event.currentTarget.id;
-  console.log(searchArray);
+  // console.log(searchArray);
 
   // método find para encontrar el elemento entero
   // previamente filter, pero mejor que me devuelva el elemento no sé.
@@ -62,22 +62,30 @@ function handleClickDrinks(event) {
   const drinkFound = searchArray.find(
     (item) => item.drinkId === idDrinkSelected
   );
-  console.log(drinkFound);
+  // console.log(drinkFound);
 
   const favDrinkFoundI = favArray.findIndex(
     (item) => item.drinkId === idDrinkSelected
   );
-  console.log(favDrinkFoundI);
+  // console.log(favDrinkFoundI);
 
   // condición para que si el objeto no está en favoritos sea incorporado,( y si sí está en favoritos, que lo quite.) (ya llegará)
   if (favDrinkFoundI === -1) {
     favArray.push(drinkFound);
   } else {
     favArray.splice(favDrinkFoundI, 1);
-  }
+  };
+
+  // que me mantenga los estilos de fav en siguientes búsquedas
+  // supongo que esto podría estar en una función fuera, vamos a ver si funciona
+  // if (favDrinkFoundI !== -1) {
+  //   console.log('Im a fav!');
+  //   // drinkFound.classList.add('fav_drink');
+  // };
+
   paintDrinks(favArray, favList);
   setFavLocalStorage();
-  console.log(favArray);
+  // console.log(favArray);
 }
 
 // 2.1 Click en buscar -> conexión al API de bebidas.
@@ -170,24 +178,24 @@ function setFavLocalStorage() {
 //  función para cargar favs del LS
 // cargo la página, saco los datos de LS, verifico que tenga info (!==null), si hay algo, actualizo mi let global
 function getFavLocalStorage() {
-  console.log('soy getFav siendo ejecutada');
+  // console.log('soy getFav siendo ejecutada');
 
   // obtenemos de LS
   const LSDrinks = localStorage.getItem('usersFavDrinks');
   // comprobar validez de los datos
   if (LSDrinks === null) {
-    console.log('LS está vacío, ejecuto setFav');
+    // console.log('LS está vacío, ejecuto setFav');
     // no sé // o sí, hago un poco de loop
     setFavLocalStorage();
   } else {
-    console.log('soy el else, debería pintar las favs');
+    // console.log('soy el else, debería pintar las favs');
     // parse de los datos del LS
     const parseDrinks = JSON.parse(LSDrinks);
     // lo guardo en la let Fav
     favArray = parseDrinks;
-    console.log(favArray);
+    // console.log(favArray);
     paintDrinks(favArray, favList)
-    console.log(favArray.length);
+    // console.log(favArray.length);
     // solo se pinta favs si tiene algún elemento
     if (favArray.length > 0){
       favSection.classList.remove('hidden');
