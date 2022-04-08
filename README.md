@@ -57,7 +57,7 @@ La prioridad es tener un JS sólido.
 3. Favoritos
    - [x] 3.1 Click sobre un cocktail -> 
       - [x] 3.1.1 Color de fondo y de fuente cambian.
-      - [ ] 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda (se recomienda crear una variable [] para las bebidas favoritas).
+      - [x] 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda (se recomienda crear una variable [] para las bebidas favoritas).
       - [ ] 3.1.3 Las favoritas deben continuar en la página aun si se realiza otra búsqueda.
 
 4. Almacenamiento local

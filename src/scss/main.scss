@@ -24,6 +24,10 @@
   padding-top: 5px;
 }
 
+.drink_image:hover, .drink_title:hover{
+  cursor: pointer;
+}
+
 .fav_drink{
   color: orangered;
   background-color: rgba(211, 211, 211, 0.461);
@@ -31,4 +35,6 @@
   border-radius: 10px;
 }
 
-// añadir cursor sobre las bebidas
+.hidden {
+  display: none;
+}
