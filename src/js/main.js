@@ -18,8 +18,8 @@ function listenerDrinkItem() {
   const liDrinks = document.querySelectorAll('.js_drinkItem');
   for (const drink of liDrinks) {
     drink.addEventListener('click', handleClickDrinks);
-  };
-};
+  }
+}
 
 // 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda
 function paintDrinks(array, list) {
@@ -41,8 +41,7 @@ function paintDrinks(array, list) {
   }
   list.innerHTML = html;
   listenerDrinkItem();
-};
-
+}
 
 function handleClickDrinks(event) {
   console.log(event.currentTarget.id);
@@ -65,17 +64,21 @@ function handleClickDrinks(event) {
   );
   console.log(drinkFound);
 
-  const favDrinkFoundI = favArray.findIndex((item) => item.drinkId === idDrinkSelected)
+  const favDrinkFoundI = favArray.findIndex(
+    (item) => item.drinkId === idDrinkSelected
+  );
   console.log(favDrinkFoundI);
 
   // condición para que si el objeto no está en favoritos sea incorporado,( y si sí está en favoritos, que lo quite.) (ya llegará)
-  if (favDrinkFoundI === -1){
+  if (favDrinkFoundI === -1) {
     favArray.push(drinkFound);
   } else {
-    favArray.splice(favDrinkFoundI,1);
+    favArray.splice(favDrinkFoundI, 1);
   }
   paintDrinks(favArray, favList);
-};
+  setFavLocalStorage();
+  console.log(favArray);
+}
 
 // 2.1 Click en buscar -> conexión al API de bebidas.
 function fetchFunction() {
@@ -98,14 +101,14 @@ function fetchFunction() {
       // no me las pintaba dentro de la función handleSearchClick pero sí aquí.
       paintDrinks(searchArray, searchList);
     });
-};
+}
 
 function handleSearchClick(event) {
   event.preventDefault();
   fetchFunction();
   searchSection.classList.remove('hidden');
   favSection.classList.remove('hidden');
-};
+}
 
 //events
 searchBtn.addEventListener('click', handleSearchClick);
@@ -142,3 +145,56 @@ searchBtn.addEventListener('click', handleSearchClick);
 //     searchList.appendChild(drink);
 //   };
 // };
+
+// 4.1 Guardar el listado de favoritos en LS
+
+// cogemos lo que queremos guardar
+// lo transformo a string (stringify)
+// en ese momento puedo hacer el set (solo quiere string)
+
+// cuando saco los datos del storage he de validar comprobar que es diferente a null
+// si se cumple, tengo que des-transformar el string (json.parse())
+// uso esos datos
+
+// cojo lo que quiero guardar, lo hago string, hago setItem
+// quiero que se ejecute cuando la user clica o desclicka en favs
+// funciona :D
+function setFavLocalStorage() {
+  // de array a string
+  const stringDrinks = JSON.stringify(favArray);
+  // añadimos a LS
+  localStorage.setItem('usersFavDrinks', stringDrinks);
+};
+
+
+//  función para cargar favs del LS
+// cargo la página, saco los datos de LS, verifico que tenga info (!==null), si hay algo, actualizo mi let global
+function getFavLocalStorage() {
+  console.log('soy getFav siendo ejecutada');
+
+  // obtenemos de LS
+  const LSDrinks = localStorage.getItem('usersFavDrinks');
+  // comprobar validez de los datos
+  if (LSDrinks === null) {
+    console.log('LS está vacío, ejecuto setFav');
+    // no sé // o sí, hago un poco de loop
+    setFavLocalStorage();
+  } else {
+    console.log('soy el else, debería pintar las favs');
+    // parse de los datos del LS
+    const parseDrinks = JSON.parse(LSDrinks);
+    // lo guardo en la let Fav
+    favArray = parseDrinks;
+    console.log(favArray);
+    paintDrinks(favArray, favList)
+    console.log(favArray.length);
+    // solo se pinta favs si tiene algún elemento
+    if (favArray.length > 0){
+      favSection.classList.remove('hidden');
+    };
+  };
+};
+
+// la ejecuto cuando se carga la página
+getFavLocalStorage();
+
