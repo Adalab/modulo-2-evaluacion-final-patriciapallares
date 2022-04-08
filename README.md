@@ -47,21 +47,21 @@ La prioridad es tener un JS sólido.
    - [x] 1.2 Un listado de resultados donde se pinte la imágen y el nombre de la bebida.
 
 2. Búsqueda
-   - [x] - 2.1 Click en buscar -> conexión al API de bebidas.
+   - [x] 2.1 Click en buscar -> conexión al API de bebidas.
    (www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita)
-   - [x] - 2.2 Recoger el texto de la usuaria para construir la URL de búsqueda.
-   - [x] - 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda.
-   - [x] - 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una 
-   - [ ] - 2.5 Pintar en HTML con innerHTML o DOM.
+   - [x] 2.2 Recoger el texto de la usuaria para construir la URL de búsqueda.
+   - [x] 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda.
+   - [x] 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una 
+   - [ ] 2.5 Pintar en HTML con innerHTML o DOM.
 
 3. Favoritos
-   - [ ] - 3.1 Click sobre un cocktail -> 
-      - [ ] - 3.1.1 Color de fondo y de fuente cambian.
-      - [ ] - 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda (se recomienda crear una variable [] para las bebidas favoritas).
-      - [ ] - 3.1.3 Las favoritas deben continuar en la página aun si se realiza otra búsqueda.
+   - [x] 3.1 Click sobre un cocktail -> 
+      - [x] 3.1.1 Color de fondo y de fuente cambian.
+      - [ ] 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda (se recomienda crear una variable [] para las bebidas favoritas).
+      - [ ] 3.1.3 Las favoritas deben continuar en la página aun si se realiza otra búsqueda.
 
 4. Almacenamiento local
-   - [ ] - 4.1 Guardar el listado de favoritos en LS.
+   - [ ] 4.1 Guardar el listado de favoritos en LS.
 
 5. BONUS. Borrar favoritos
 6. BONUS. Afinar maquetación

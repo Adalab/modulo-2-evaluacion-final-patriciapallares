@@ -47,12 +47,14 @@ let favArray = [];
 //   };
 // };
 
+
 function handleClickDrinks(event) {
   console.log(event.currentTarget.id);
-}
+  // 3.1.1 Color de fondo y de fuente cambian.
+  event.currentTarget.classList.toggle('fav_drink');
+};
 
-// listener de las bebidas
-// UN PUTO PUNTO EN '.JS NO ME DEJABA AVANZARRRR
+// 3.1 Click sobre un cocktail 
 function listenersDrinkItem() {
   const liDrinks = document.querySelectorAll('.js_drinkItem');
   for (const drink of liDrinks) {
@@ -60,7 +62,7 @@ function listenersDrinkItem() {
   };
 };
 
-
+// 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda
 function paintDrinks() {
   let html = '';
   for (const searchItem of searchArray) {
