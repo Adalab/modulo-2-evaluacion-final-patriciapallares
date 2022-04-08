@@ -72,7 +72,6 @@ function paintDrinks(array, list, fav) {
   };
   list.innerHTML = html;
   listenerDrinkItem();
-  removeFavClass();
 };
 
 
