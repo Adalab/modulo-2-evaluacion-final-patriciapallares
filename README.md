@@ -1,5 +1,6 @@
 # Evaluación final módulo 2 Patricia Pallarés González
-///
+
+<!--
 Notas presentación enunciado:
 ASWK opcional
 
@@ -31,8 +32,10 @@ Normas:
 max 11/04 a las 14
 github pages 
 
+-->
 
-Interpretación del enunciado:
+## Interpretación del enunciado:
+===
 
 Queremos una aplicación web que contenga un listado de bebidas internacionales, que permita a la user des/marcar sus favoritas y que se guarde en LocalStorage.
 
@@ -40,15 +43,15 @@ La prioridad es tener un JS sólido.
 ///
 
 1. Estructura básica en HTML
-   - [x] - 1.1 Un input de texto y un botón para buscar bebidas por su nombre.
-   - [x] - 1.2 Un listado de resultados donde se pinte la imágen y el nombre de la bebida.
+   - [x] 1.1 Un input de texto y un botón para buscar bebidas por su nombre.
+   - [x] 1.2 Un listado de resultados donde se pinte la imágen y el nombre de la bebida.
 
 2. Búsqueda
    - [x] - 2.1 Click en buscar -> conexión al API de bebidas.
    (www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita)
    - [x] - 2.2 Recoger el texto de la usuaria para construir la URL de búsqueda.
    - [x] - 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda.
-   - [x] -  2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una 
+   - [x] - 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una 
    - [ ] - 2.5 Pintar en HTML con innerHTML o DOM.
 
 3. Favoritos
