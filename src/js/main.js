@@ -8,10 +8,16 @@ const resetBtn = document.querySelector('.js_reset_button');
 const favSection = document.querySelector('.js_favorites_section');
 const favList = document.querySelector('.js_favorites_list');
 const searchSection = document.querySelector('.js_search_section');
+const deleteFavBtn = document.querySelectorAll('.js_delete')
 let searchList = document.querySelector('.js_search_list');
 let searchArray = [];
 let favArray = [];
 
+
+//función para que el click quite de favArray el elemento
+function handleFabBtnClick(params) {
+  
+}
 
 
 // 3.1 Click sobre un cocktail
@@ -20,8 +26,8 @@ function listenerDrinkItem() {
   for (const drink of liDrinks) {
     drink.addEventListener('click', handleClickDrinks);
 
-  // que me mantenga los estilos de fav en siguientes búsquedas
-  // supongo que esto podría estar en una función fuera, vamos a ver si funciona
+    // que me mantenga los estilos de fav en siguientes búsquedas
+    // supongo que esto podría estar en una función fuera, vamos a ver si funciona
     const favIndex = favArray.findIndex((fav) => {
       return fav.drinkId === drink.id;
     });
@@ -29,15 +35,15 @@ function listenerDrinkItem() {
 
     if (favIndex !== -1) {
       drink.classList.add('fav_drink');
-    };
-  };
-};
+    }
+  }
+}
 
 // 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda
 function paintSearchDrinks() {
   let html = '';
   for (const searchItem of searchArray) {
-    const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`; 
+    const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
 
     html += `<li class ="drink_li js_drink_search_item" id=${searchItem.drinkId}>`;
     html += `<article class="drink_article">`;
@@ -50,18 +56,20 @@ function paintSearchDrinks() {
     html += `<h3 class="drink_title">${searchItem.drinkName}</h3>`;
     html += `</article>`;
     html += `</li>`;
-  };
+  }
   searchList.innerHTML = html;
   listenerDrinkItem();
-};
+}
 
-function paintFavDrinks(){
+function paintFavDrinks() {
   let html = '';
   for (const searchItem of favArray) {
-    const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`; 
+    const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
 
     html += `<li class ="drink_li js_drink_fav_item" id=${searchItem.drinkId}>`;
     html += `<article class="drink_article">`;
+    html += `<div class=" js_delete delete__div "><p class="delete__icon">×</p></div>`;
+    // 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
     // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
     if (searchItem.thumbnail !== '') {
       html += `<img class ="drink_image" src="${searchItem.thumbnail}">`;
@@ -71,9 +79,9 @@ function paintFavDrinks(){
     html += `<h3 class="drink_title">${searchItem.drinkName}</h3>`;
     html += `</article>`;
     html += `</li>`;
-  };
+  }
   favList.innerHTML = html;
-};
+}
 
 function handleClickDrinks(event) {
   // console.log(event.currentTarget.id);
@@ -109,11 +117,11 @@ function handleClickDrinks(event) {
     favArray.push(drinkFound);
   } else {
     favArray.splice(favDrinkFoundI, 1);
-  };
+  }
   paintFavDrinks();
   setFavLocalStorage();
   // console.log(favArray);
-};
+}
 
 // 2.1 Click en buscar -> conexión al API de bebidas.
 function fetchFunction() {
@@ -136,17 +144,15 @@ function fetchFunction() {
       // no me las pintaba dentro de la función handleSearchClick pero sí aquí.
       paintSearchDrinks();
     });
-};
+}
 
 function handleSearchClick(event) {
   event.preventDefault();
   fetchFunction();
   searchSection.classList.remove('hidden');
   favSection.classList.remove('hidden');
-};
+}
 
-//events
-searchBtn.addEventListener('click', handleSearchClick);
 
 // función renderDrink con DOM si eso
 // 4.1 Guardar el listado de favoritos en LS
@@ -167,13 +173,13 @@ function setFavLocalStorage() {
   const stringDrinks = JSON.stringify(favArray);
   // añadimos a LS
   localStorage.setItem('usersFavDrinks', stringDrinks);
-};
+}
 
 //  función para cargar favs del LS
 // cargo la página, saco los datos de LS, verifico que tenga info (!==null), si hay algo, actualizo mi let global
 function getFavLocalStorage() {
   // console.log('soy getFav siendo ejecutada');
-
+  
   // obtenemos de LS
   const LSDrinks = localStorage.getItem('usersFavDrinks');
   // comprobar validez de los datos
@@ -193,10 +199,14 @@ function getFavLocalStorage() {
     // solo se pinta favs si tiene algún elemento
     if (favArray.length > 0) {
       favSection.classList.remove('hidden');
-    };
-  };
-};
+    }
+  }
+}
 
 // la ejecuto cuando se carga la página
 getFavLocalStorage();
 console.log(favArray);
+
+//events
+searchBtn.addEventListener('click', handleSearchClick);
+deleteFavBtn.addEventListener('click', handleFabBtnClick)

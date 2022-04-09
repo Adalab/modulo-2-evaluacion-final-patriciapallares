@@ -1,6 +1,27 @@
 // @import 'core/variables';
 @import 'core/reset';
 
+
+.delete {
+
+  &__div {
+    width: 21px;
+    background-color: rgb(252, 218, 155);
+    border: 1.25px solid  orangered;
+    border-radius: 50px;
+    transform: translate(50px,10px);
+  }
+
+  &__icon {
+    color: rgb(255, 123, 0);
+    color: orangered;
+    transform: translateY(0.5px);
+    font-family: 'Courier New', Courier, monospace;
+  }
+}
+
+
+
 .sections {
   display: flex;
   flex-direction: row;
@@ -26,7 +47,8 @@
   text-align: center;
 }
 
-.js_drink_search_item:hover{
+.js_drink_search_item:hover, .delete__div:hover
+{
   cursor: pointer;
 }
 
