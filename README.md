@@ -64,9 +64,10 @@ La prioridad es tener un JS sólido.
    - [x] 4.1 Guardar el listado de favoritos en LS.
 
 5. BONUS. Borrar favoritos
-   - [ ] 5.1 Borrar el favorito de la lista, del LS y quitarle los estilos en la lista de búsqueda
+   - [ ] 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
    - [ ] 5.2 Borrar de favoritos de la lista al clicar sobre la bebida en la lista de búsqueda
    - [ ] 5.3 Botón de reset que borra favoritos, lista, estilos y SL
 
 6. BONUS. Afinar maquetación
-   - [ ] 6.1 Añadir estilos libremente
+   - [ ] 6.1 Ajustar usabilidad
+   - [ ] 6.2 Añadir estilos libremente
