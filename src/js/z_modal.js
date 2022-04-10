@@ -6,7 +6,7 @@ const showModal = () => {
   modal.classList.remove('hidden');
 };
 
-setTimeout(showModal, 2000);
+setTimeout(showModal, 5000);
 
 const closeModal = () => {
   modal.classList.add('hidden');

@@ -1,7 +1,7 @@
 .background {
   position: fixed;
   z-index: 998;
-  background-color: #00007777;
+  background-color: rgba(0, 38, 255, 0.259);
   top: 0;
   left: 0;
   bottom: 0;
@@ -14,30 +14,34 @@
 .modal__window {
   display: relative;
   z-index: 999;
-  min-width: 50vw;
-  max-width: 90vw;
-  min-height: 30vh;
-  max-width: 80vh;
-  border: 5px cyan solid;
+  width: 300px;
+  height: fit-content;
   border-radius: 20px;
-  background: #1c1c1c;
+  background-color: rgba(0, 38, 255, 0.9);
   padding: 20px;
 }
 
-.modal__window h3 {
-  color: cyan;
+.modal__title, .modal__text {
+  color: white;
+  font-family: $font-main;
+  transform: translateY(-20px);
 }
 
 .modal__button {
   position: relative;
-  border: 5px cyan solid;
   border-radius: 30px;
-  background: #1c1c1c;
-  width: 40px;
-  height: 40px;
+  background-color: rgba(0, 38, 255, 0.859);
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn {
+  color: white;
+  font-family: $font-main;
+  font-size: 14px;
 }
 
 .modal__close {
