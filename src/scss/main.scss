@@ -1,50 +1,7 @@
 // @import 'core/variables';
 @import 'core/reset';
+@import 'core/variables';
+@import 'core/modal';
+@import 'core/layout';
 
-.sections {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-}
 
-.drink_image{
-  width: 100px;
-}
-
-.drink_li{
-  list-style-type: none;
-}
-
-.drink_article{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0;
-  padding-top: 5px;
-  width: 17ch;
-  text-align: center;
-}
-
-.drink_image:hover, .drink_title:hover{
-  cursor: pointer;
-}
-
-.fav_drink{
-  color: orangered;
-  width: 17ch;
-  background-color: rgba(211, 211, 211, 0.461);
-  outline: 2px solid orangered;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.not_fav{
-  width: 17ch;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.hidden {
-  display: none;
-}
