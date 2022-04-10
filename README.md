@@ -78,8 +78,5 @@ La prioridad es tener un JS sólido.
    - [x] 6.1 Añadir estilos libremente (que los items estén a la misma altura)
 
 7. BONUS MÍO:
-   - [ ] 7.1 Bebe con precaución: Modal moral
+   - [x] 7.1 Bebe con precaución: Modal moral
    - [ ] 7.2 Validación del valor de búsqueda
-
-
-cambiar cursor botones

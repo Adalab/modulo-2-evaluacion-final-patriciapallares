@@ -15,10 +15,10 @@ function handleResetClick(event) {
   console.log('soy el botón reset y me has clicado');
   favArray = [];
 
-  const markedItems = document.querySelectorAll('.fav_drink');
-  for (const markedI of markedItems) {
-    markedI.classList.remove('fav_drink');
-  };
+  // const markedItems = document.querySelectorAll('.fav_drink');
+  // for (const markedI of markedItems) {
+  //   // markedI.classList.remove('fav_drink');
+  // };
   // paintFav de nuevo
   paintFavDrinks();
   // SL de nuevo
