@@ -23,6 +23,8 @@ function handleResetClick(event) {
   paintFavDrinks();
   // SL de nuevo
   setFavLocalStorage();
+  favSection.classList.add('hidden');
+
 };
 
 // escuchar el botón

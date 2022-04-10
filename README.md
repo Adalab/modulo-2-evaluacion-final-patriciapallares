@@ -36,12 +36,10 @@ github pages
 
 ## Interpretación del enunciado:
 
-===
-
 Queremos una aplicación web que contenga un listado de bebidas internacionales, que permita a la user des/marcar sus favoritas y que se guarde en LocalStorage.
 
 La prioridad es tener un JS sólido.
-///
+
 
 1. Estructura básica en HTML
 
@@ -77,8 +75,9 @@ La prioridad es tener un JS sólido.
 
 6. BONUS. Afinar maquetación
 
-   - [ ] 6.1 Ajustar usabilidad
+   - [ ] 6.1 Ajustar usabilidad. 
    - [ ] 6.2 Añadir estilos libremente (que los items estén a la misma altura)
 
-7. BONUS MÍO: Bebe con precaución
-   - [ ] 7.1 Modal moral
+7. BONUS MÍO:
+   - [ ] 7.1 Bebe con precaución: Modal moral
+   - [ ] 7.2 Validación del valor de búsqueda

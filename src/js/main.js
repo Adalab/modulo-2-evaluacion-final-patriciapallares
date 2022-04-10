@@ -15,6 +15,7 @@ let favArray = [];
 
 let notFavHtml = '';
 
+
 // 3.1 Click sobre un cocktail
 function listenerDrinkItem() {
   // console.log(searchArray);
@@ -145,7 +146,8 @@ function fetchFunction() {
       // no me las pintaba dentro de la función handleSearchClick pero sí aquí.
       paintSearchDrinks();
     });
-};
+
+}
 
 function handleSearchClick(event) {
   event.preventDefault();
