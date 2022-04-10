@@ -6,6 +6,7 @@ function handleFavBtnClick(event) {
   // me he flipado creo
   // sigo necesitando la posición para eliminarlo
   const nameBtnSelected = event.currentTarget.name;
+  console.log(nameBtnSelected);
 
   const btnFavFound = favArray.find((btn) => btn.drinkName === nameBtnSelected);
   console.log(btnFavFound);
@@ -19,7 +20,8 @@ function handleFavBtnClick(event) {
   favArray.splice(btnFavFoundIndex, 1);
 
   // no me lo ha despintado aaaaaaaaa
-}
+  paintFavDrinks();
+};
 
 //función para que el click quite de favArray el elemento
 function listenerFavItem() {
@@ -35,6 +37,7 @@ function listenerFavItem() {
   }
 }
 
+console.log(favArray);
 // const idDrinkSelected = event.currentTarget.id;
 // // console.log(searchArray);
 // const drinkFound = searchArray.find((item) => item.drinkId === idDrinkSelected);

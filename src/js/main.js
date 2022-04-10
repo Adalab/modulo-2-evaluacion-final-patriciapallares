@@ -13,9 +13,10 @@ let searchList = document.querySelector('.js_search_list');
 let searchArray = [];
 let favArray = [];
 
+let notFavHtml = '';
+
+
 console.log(favArray);
-
-
 
 // 3.1 Click sobre un cocktail
 function listenerDrinkItem() {
@@ -60,6 +61,7 @@ function paintSearchDrinks() {
 
 function paintFavDrinks() {
   let html = '';
+
   for (const searchItem of favArray) {
     const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
 
