@@ -145,7 +145,7 @@ function fetchFunction() {
       // no me las pintaba dentro de la función handleSearchClick pero sí aquí.
       paintSearchDrinks();
     });
-}
+};
 
 function handleSearchClick(event) {
   event.preventDefault();
