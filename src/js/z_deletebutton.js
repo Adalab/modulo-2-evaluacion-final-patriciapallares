@@ -7,26 +7,22 @@ function handleFavBtnClick(event) {
   // sigo necesitando la posición para eliminarlo
   const nameBtnSelected = event.currentTarget.name;
   console.log(nameBtnSelected);
-
   const btnFavFound = favArray.find((btn) => btn.drinkName === nameBtnSelected);
   console.log(btnFavFound);
-
   const btnFavFoundIndex = favArray.findIndex(
     (btn) => btn.drinkName === nameBtnSelected
   );
   console.log(btnFavFoundIndex);
-
   // arrasamos con el objeto y lo quitamos de favArray
   favArray.splice(btnFavFoundIndex, 1);
-
   // no me lo ha despintado aaaaaaaaa
   paintFavDrinks();
+  setFavLocalStorage();
 };
 
 //función para que el click quite de favArray el elemento
 function listenerFavItem() {
   const deleteFavBtn = document.querySelectorAll('.js_delete');
-
   console.log('me estoy ejecutando');
   // escuchar el click
   // la constante tiene que ser local para que funcione
@@ -34,8 +30,8 @@ function listenerFavItem() {
     // es btn, no lo de la derecha
     btn.addEventListener('click', handleFavBtnClick);
     console.log('existo');
-  }
-}
+  };
+};
 
 console.log(favArray);
 // const idDrinkSelected = event.currentTarget.id;
