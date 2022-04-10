@@ -12,48 +12,62 @@
     <title>TheCocktail Search</title>
   </head>
   <body>
-    <main>
-      <h1>TheCocktail Search</h1>
+    <main class="main">
+      <h1 class="main__title">TheCocktail Search</h1>
+      <h3 class="main__subtitle">from TheCocktailDB</h3>
       <div>
         <form action="">
-          <input class="js_search_input" type="text" name="" id="" placeholder="Ej. Mojito" />
-          <button class="js_search_button">Buscar</button>
-          <button class="js_reset_button">Reset</button>
+          <input class="js_search_input form__input" type="text" name="" id="" placeholder="Ej. Mojito" />
+          <button class="js_search_button form__btn">Buscar</button>
+          <button class="js_reset_button form__btn">Reset</button>
         </form>
       </div>
       <div class="sections">
         <section class="js_favorites_section hidden">
-          <h2>Favoritos:</h2>
+          <h2 class="subtitle">Favoritos:</h2>
           <ul class="js_favorites_list">
             <!-- <li>
               <article>
+
                 <img src=https://placekitten.com/200/300 />
-                <h3>Mojito</h3> 
+                <h3>Mojito</h3>
               </article>
             </li> -->
           </ul>
         </section>
 
         <section class="js_search_section hidden">
-          <h2>Búsqueda:</h2>
+          <h2 class="subtitle">Búsqueda:</h2>
           <ul class="js_search_list">
             <!-- <li>
               <article>
                 <img src=https://placekitten.com/200/300 />
-                <h3>Cerveza</h3> 
+                <h3>Cerveza</h3>
               </article>
             </li>
 
             <li>
               <article>
                 <img src=https://placekitten.com/200/300 />
-                <h3>Vermut</h3> 
+                <h3>Vermut</h3>
               </article>
             </li> -->
           </ul>
 
         </section>
       </div>
+
+      <div class="background hidden js_modal">
+        <div class="modal__window">
+          <div class="js_close_btn modal__button modal__close">
+            <button class=""> <p class="btn">×</p></button>
+          </div>
+          <h3 class="modal__title">¡Hola user, recuerda!</h3>
+          <p class="modal__text">Como dijo Erasmo de Rotterdam: "El vino no daña, pero el que bebe sin moderación se daña a sí mismo".
+          </p>
+        </div>
+      </div>
+    
     </main>
     <script src="./assets/js/main.js"></script>
   </body>
