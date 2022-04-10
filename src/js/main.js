@@ -186,11 +186,7 @@ function getFavLocalStorage() {
   // obtenemos de LS
   const LSDrinks = localStorage.getItem('usersFavDrinks');
   // comprobar validez de los datos
-  if (LSDrinks === null) {
-    // console.log('LS está vacío, ejecuto setFav');
-    // no sé // o sí, hago un poco de loop
-    setFavLocalStorage();
-  } else {
+  if (LSDrinks !== null) {
     // console.log('soy el else, debería pintar las favs');
     // parse de los datos del LS
     const parseDrinks = JSON.parse(LSDrinks);
