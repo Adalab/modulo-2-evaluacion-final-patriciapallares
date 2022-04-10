@@ -8,16 +8,33 @@ const resetBtn = document.querySelector('.js_reset_button');
 const favSection = document.querySelector('.js_favorites_section');
 const favList = document.querySelector('.js_favorites_list');
 const searchSection = document.querySelector('.js_search_section');
-const deleteFavBtn = document.querySelectorAll('.js_delete')
+
 let searchList = document.querySelector('.js_search_list');
 let searchArray = [];
 let favArray = [];
 
+console.log(favArray);
+
+// replicar la estructura de los listeners de las drinks
+function handleFavBtnClick(event) {
+    // borrar objeto de fav array con findIndex o algo no sé
+
+  console.log(event.currentTarget.name)
+};
 
 //función para que el click quite de favArray el elemento
-function handleFabBtnClick(params) {
-  
-}
+function listenerFavItem() {
+  const deleteFavBtn = document.querySelectorAll('.js_delete');
+
+  console.log('me estoy ejecutando');
+  // escuchar el click
+  // la constante tiene que ser local para que funcione
+  for (const btn of deleteFavBtn) {
+    // es btn, no lo de la derecha
+    btn.addEventListener('click', handleFavBtnClick);
+    console.log('existo');
+  };
+};
 
 
 // 3.1 Click sobre un cocktail
@@ -68,7 +85,7 @@ function paintFavDrinks() {
 
     html += `<li class ="drink_li js_drink_fav_item" id=${searchItem.drinkId}>`;
     html += `<article class="drink_article">`;
-    html += `<div class=" js_delete delete__div "><p class="delete__icon">×</p></div>`;
+    html += `<button name="${searchItem.drinkName}" class="delete__icon js_delete">×</button>`;
     // 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
     // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
     if (searchItem.thumbnail !== '') {
@@ -81,9 +98,12 @@ function paintFavDrinks() {
     html += `</li>`;
   }
   favList.innerHTML = html;
-}
+  listenerFavItem();
+};
+
 
 function handleClickDrinks(event) {
+  console.log('soy un click en las bebidas');
   // console.log(event.currentTarget.id);
   // 3.1.1 Color de fondo y de fuente cambian.
 
@@ -153,7 +173,6 @@ function handleSearchClick(event) {
   favSection.classList.remove('hidden');
 }
 
-
 // función renderDrink con DOM si eso
 // 4.1 Guardar el listado de favoritos en LS
 
@@ -179,7 +198,7 @@ function setFavLocalStorage() {
 // cargo la página, saco los datos de LS, verifico que tenga info (!==null), si hay algo, actualizo mi let global
 function getFavLocalStorage() {
   // console.log('soy getFav siendo ejecutada');
-  
+
   // obtenemos de LS
   const LSDrinks = localStorage.getItem('usersFavDrinks');
   // comprobar validez de los datos
@@ -205,8 +224,8 @@ function getFavLocalStorage() {
 
 // la ejecuto cuando se carga la página
 getFavLocalStorage();
-console.log(favArray);
 
 //events
+
 searchBtn.addEventListener('click', handleSearchClick);
-deleteFavBtn.addEventListener('click', handleFabBtnClick)
+

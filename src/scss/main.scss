@@ -4,19 +4,16 @@
 
 .delete {
 
-  &__div {
-    width: 21px;
+
+  &__icon {
+    width: 20px;
+    color: orangered;
+    transform: translateY(-1px);
+    font-family: 'Courier New', Courier, monospace;
     background-color: rgb(252, 218, 155);
     border: 1.25px solid  orangered;
     border-radius: 50px;
     transform: translate(50px,10px);
-  }
-
-  &__icon {
-    color: rgb(255, 123, 0);
-    color: orangered;
-    transform: translateY(0.5px);
-    font-family: 'Courier New', Courier, monospace;
   }
 }
 
@@ -30,6 +27,7 @@
 
 .drink_image{
   width: 100px;
+  border-radius: 10px;
 }
 
 .drink_li{
@@ -47,7 +45,7 @@
   text-align: center;
 }
 
-.js_drink_search_item:hover, .delete__div:hover
+.js_drink_search_item:hover, .delete__div:hover, .delete__icon:hover
 {
   cursor: pointer;
 }
