@@ -64,9 +64,9 @@ La prioridad es tener un JS sólido.
    - [x] 4.1 Guardar el listado de favoritos en LS.
 
 5. BONUS. Borrar favoritos
-   - [ ] 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
+   - [x] 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
    Añadir x a favs, evento sobre el click a la x, este hace que se borre de favArray y del storage. CÓMO SABE LA X A QUIÉN ME REFIERO, ¿con ID?
-   - [ ] 5.2 Borrar de favoritos de la lista al clicar sobre la bebida en la lista de búsqueda
+   - [x] 5.2 Borrar de favoritos de la lista al clicar sobre la bebida en la lista de búsqueda
    - [ ] 5.3 Botón de reset que borra favoritos, lista, estilos y SL
 
 6. BONUS. Afinar maquetación

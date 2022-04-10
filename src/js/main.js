@@ -91,7 +91,7 @@ function handleClickDrinks(event) {
 
   // 16:05 me toca comentar esto:
   // event.currentTarget.classList.toggle('fav_drink');
-  event.currentTarget.classList.toggle('fav_drink');
+  event.currentTarget.classList.add('fav_drink');
 
   // 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda
   // escuchar cuando clicamos la bebida
@@ -117,8 +117,12 @@ function handleClickDrinks(event) {
   // condición para que si el objeto no está en favoritos sea incorporado,( y si sí está en favoritos, que lo quite.) (ya llegará)
   if (favDrinkFoundI === -1) {
     favArray.push(drinkFound);
+    event.currentTarget.classList.add('fav_drink');
+
   } else {
     favArray.splice(favDrinkFoundI, 1);
+    event.currentTarget.classList.remove('fav_drink');
+
   }
   paintFavDrinks();
   setFavLocalStorage();

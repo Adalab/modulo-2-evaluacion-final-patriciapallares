@@ -1,3 +1,14 @@
+// función para que me quite el colorinchi de la lista de la búsqueda cuando x
+
+function removeFavClass(event) {
+  const favItems = document.querySelectorAll('.fav_drink');
+  for (const favI of favItems) {
+    // si el id de el searchli y el favli coinciden, quítame la clase fav_drink :S
+    
+  }
+}
+
+
 // replicar la estructura de los listeners de las drinks
 function handleFavBtnClick(event) {
   // borrar objeto de fav array con findIndex o algo no sé
@@ -6,6 +17,9 @@ function handleFavBtnClick(event) {
   // me he flipado creo
   // sigo necesitando la posición para eliminarlo
   const nameBtnSelected = event.currentTarget.name;
+  let idBtnSelected = event.currentTarget.id;
+  console.log(idBtnSelected);
+
   console.log(nameBtnSelected);
   const btnFavFound = favArray.find((btn) => btn.drinkName === nameBtnSelected);
   console.log(btnFavFound);
@@ -18,7 +32,11 @@ function handleFavBtnClick(event) {
   // no me lo ha despintado aaaaaaaaa
   paintFavDrinks();
   setFavLocalStorage();
+  removeFavClass();
 };
+
+
+
 
 //función para que el click quite de favArray el elemento
 function listenerFavItem() {
