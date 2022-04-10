@@ -1,70 +1,46 @@
-// función para que me quite el colorinchi de la lista de la búsqueda cuando x
-
-function removeFavClass(event) {
-  const favItems = document.querySelectorAll('.fav_drink');
-  for (const favI of favItems) {
-    // si el id de el searchli y el favli coinciden, quítame la clase fav_drink :S
-    
-  }
-}
-
-
 // replicar la estructura de los listeners de las drinks
 function handleFavBtnClick(event) {
+  event.preventDefault();
   // borrar objeto de fav array con findIndex o algo no sé
   // ahora ya sabemos que sí o sí es fav, así que no sé si habría que hacer findIndex.
   // pruevo a hacer splice directamente como una chula
   // me he flipado creo
   // sigo necesitando la posición para eliminarlo
   const nameBtnSelected = event.currentTarget.name;
-  let idBtnSelected = event.currentTarget.id;
-  console.log(idBtnSelected);
 
-  console.log(nameBtnSelected);
-  const btnFavFound = favArray.find((btn) => btn.drinkName === nameBtnSelected);
-  console.log(btnFavFound);
+  const btnFavFound = favArray.find((btn) => btn.drinkId === nameBtnSelected);
   const btnFavFoundIndex = favArray.findIndex(
-    (btn) => btn.drinkName === nameBtnSelected
+    (btn) => btn.drinkId === nameBtnSelected
   );
-  console.log(btnFavFoundIndex);
   // arrasamos con el objeto y lo quitamos de favArray
   favArray.splice(btnFavFoundIndex, 1);
   // no me lo ha despintado aaaaaaaaa
+
+  // función para que me quite el colorinchi de la lista de la búsqueda cuando x
+  // no he sabido hacerlo en otra función porq necesito el current event tío
+  const markedItems = document.querySelectorAll('.fav_drink');
+  for (const markedI of markedItems) {
+    // si el id de markI ya no está en ningun objeto de favArray, quítame la clase .fav_drink
+    console.log(markedI.id);
+    console.log(nameBtnSelected);
+
+    // me saca del atoramiento por ahora
+    if (parseInt(nameBtnSelected) !== parseInt(markedI)) {
+      console.log('NO soy una igualdad pero me cumplo');
+      markedI.classList.remove('fav_drink');
+    };
+  };
   paintFavDrinks();
   setFavLocalStorage();
-  removeFavClass();
 };
-
-
-
 
 //función para que el click quite de favArray el elemento
 function listenerFavItem() {
   const deleteFavBtn = document.querySelectorAll('.js_delete');
-  console.log('me estoy ejecutando');
   // escuchar el click
   // la constante tiene que ser local para que funcione
   for (const btn of deleteFavBtn) {
     // es btn, no lo de la derecha
     btn.addEventListener('click', handleFavBtnClick);
-    console.log('existo');
   };
 };
-
-console.log(favArray);
-// const idDrinkSelected = event.currentTarget.id;
-// // console.log(searchArray);
-// const drinkFound = searchArray.find((item) => item.drinkId === idDrinkSelected);
-// // console.log(drinkFound);
-
-// const favDrinkFoundI = favArray.findIndex(
-//   (item) => item.drinkId === idDrinkSelected
-// );
-// // console.log(favDrinkFoundI);
-
-// // condición para que si el objeto no está en favoritos sea incorporado,( y si sí está en favoritos, que lo quite.) (ya llegará)
-// if (favDrinkFoundI === -1) {
-//   favArray.push(drinkFound);
-// } else {
-//   favArray.splice(favDrinkFoundI, 1);
-// }

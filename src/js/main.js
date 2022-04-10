@@ -15,11 +15,9 @@ let favArray = [];
 
 let notFavHtml = '';
 
-
-console.log(favArray);
-
 // 3.1 Click sobre un cocktail
 function listenerDrinkItem() {
+  // console.log(searchArray);
   const liDrinks = document.querySelectorAll('.js_drink_search_item');
   for (const drink of liDrinks) {
     drink.addEventListener('click', handleClickDrinks);
@@ -29,7 +27,7 @@ function listenerDrinkItem() {
     const favIndex = favArray.findIndex((fav) => {
       return fav.drinkId === drink.id;
     });
-    console.log(favIndex);
+    // console.log(favIndex);
 
     if (favIndex !== -1) {
       drink.classList.add('fav_drink');
@@ -62,30 +60,29 @@ function paintSearchDrinks() {
 function paintFavDrinks() {
   let html = '';
 
-  for (const searchItem of favArray) {
-    const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
+  for (const favItem of favArray) {
+    const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${favItem.drinkName}`;
 
-    html += `<li class ="drink_li js_drink_fav_item" id=${searchItem.drinkId}>`;
+    html += `<li class ="drink_li js_drink_fav_item" id=${favItem.drinkId}>`;
     html += `<article class="drink_article">`;
-    html += `<button name="${searchItem.drinkName}" class="delete__icon js_delete">×</button>`;
+    html += `<button name="${favItem.drinkId}" class="delete__icon js_delete">×</button>`;
     // 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
     // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
-    if (searchItem.thumbnail !== '') {
-      html += `<img class ="drink_image" src="${searchItem.thumbnail}">`;
+    if (favItem.thumbnail !== '') {
+      html += `<img class ="drink_image" src="${favItem.thumbnail}">`;
     } else {
       html += `<img class ="drink_image" src="${placeholder}">`;
     }
-    html += `<h3 class="drink_title">${searchItem.drinkName}</h3>`;
+    html += `<h3 class="drink_title">${favItem.drinkName}</h3>`;
     html += `</article>`;
     html += `</li>`;
   }
   favList.innerHTML = html;
   listenerFavItem();
-};
-
+}
 
 function handleClickDrinks(event) {
-  console.log('soy un click en las bebidas');
+  // console.log('soy un click en las bebidas');
   // console.log(event.currentTarget.id);
   // 3.1.1 Color de fondo y de fuente cambian.
 
@@ -118,11 +115,9 @@ function handleClickDrinks(event) {
   if (favDrinkFoundI === -1) {
     favArray.push(drinkFound);
     event.currentTarget.classList.add('fav_drink');
-
   } else {
     favArray.splice(favDrinkFoundI, 1);
     event.currentTarget.classList.remove('fav_drink');
-
   }
   paintFavDrinks();
   setFavLocalStorage();
@@ -214,4 +209,3 @@ getFavLocalStorage();
 //events
 
 searchBtn.addEventListener('click', handleSearchClick);
-
