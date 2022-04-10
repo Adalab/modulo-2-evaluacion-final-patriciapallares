@@ -43,7 +43,7 @@ function paintSearchDrinks() {
     const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
 
     html += `<li class ="drink_li js_drink_search_item" id=${searchItem.drinkId}>`;
-    html += `<article class="drink_article">`;
+    html += `<article class="drink_article special">`;
     // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
     if (searchItem.thumbnail !== '') {
       html += `<img class ="drink_image" src="${searchItem.thumbnail}">`;
@@ -58,6 +58,7 @@ function paintSearchDrinks() {
   listenerDrinkItem();
 }
 
+
 function paintFavDrinks() {
   let html = '';
 
@@ -66,7 +67,7 @@ function paintFavDrinks() {
 
     html += `<li class ="drink_li js_drink_fav_item" id=${favItem.drinkId}>`;
     html += `<article class="drink_article">`;
-    html += `<button name="${favItem.drinkId}" class="delete__icon js_delete">×</button>`;
+    html += `<button name="${favItem.drinkId}" class="delete__icon js_delete"><p class="theX">×</p></button>`;
     // 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
     // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
     if (favItem.thumbnail !== '') {

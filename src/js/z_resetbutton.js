@@ -24,7 +24,8 @@ function handleResetClick(event) {
   // SL de nuevo
   setFavLocalStorage();
   favSection.classList.add('hidden');
-
+  searchSection.classList.add('hidden');
+  searchInput.value = ''
 };
 
 // escuchar el botón
