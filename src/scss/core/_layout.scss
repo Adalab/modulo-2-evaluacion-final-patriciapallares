@@ -18,7 +18,18 @@
     text-align: right;
     width: 300px;
     margin-bottom: 20px;
+
+    &--special{
+      font-family: $font-main;
+      font-family: $font-main;
+      color: rgba(56, 56, 56, 0.644);
+      font-size: 12px;
+      text-align: left;
+      width: 355px;
+      margin-top: 20px;  
+    }
   }
+
 }
 
 

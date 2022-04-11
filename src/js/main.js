@@ -11,6 +11,15 @@ let searchArray = [];
 let favArray = [];
 let notFavHtml = '';
 
+function paintFavIf(){
+  console.log(favArray.length);
+  if (favArray.length === 0){
+   favSection.classList.add('hidden');
+ }else{
+   favSection.classList.remove('hidden');
+ }
+}
+
 function handleClickDrinks(event) {
   // console.log('soy un click en las bebidas');
   // console.log(event.currentTarget.id);
@@ -36,6 +45,7 @@ function handleClickDrinks(event) {
   }
   paintFavDrinks();
   setFavLocalStorage();
+  paintFavIf();
 };
 
 // 3.1 Click sobre un cocktail
@@ -64,6 +74,7 @@ function handleSearchClick(event) {
   fetchFunction();
   searchSection.classList.remove('hidden');
   favSection.classList.remove('hidden');
+  paintFavIf();
 };
 
 getFavLocalStorage();

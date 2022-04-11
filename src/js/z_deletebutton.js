@@ -32,10 +32,7 @@ function handleFavBtnClick(event) {
   };
   paintFavDrinks();
   setFavLocalStorage();
-  // console.log(favArray.length);
-  // if (favArray.length === 0){
-  //   favSection.classList.add('hidden');
-  // }
+  paintFavIf();
 };
 
 //función para que el click quite de favArray el elemento
@@ -48,3 +45,4 @@ function listenerFavItem() {
     btn.addEventListener('click', handleFavBtnClick);
   };
 };
+
