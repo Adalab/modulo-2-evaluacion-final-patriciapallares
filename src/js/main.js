@@ -84,7 +84,7 @@ function handleSearchClick(event) {
   searchInput.value = ''
 };
 
-// ejecuto getFavLS al cargar la página
+// ejecuto función para cargar de LS al cargar la página
 
 getFavLocalStorage();
 
