@@ -1,32 +1,24 @@
 // 5.3 Botón de reset que borra favoritos, lista, estilos y SL
 
-// traer el botón a js
-// escuchar el botón
-// favArray = ''
-// paintFav de nuevo
-// SL de nuevo
-// quita fav_drink class a todos los que lo tengan :S
-
-// traer el botón a js
-// const resetBtn = document.querySelector('.js_reset_button');
+// función manejadora del evento click sobre el botón reset
+  // preventDefault para evitar que se cargue la página de nuevo
+  // vacío el contenido de favArray con []
+  // ejecuto:
+    // función para pintar fav
+    // función para guardar en LS
+  // añado hidden a las secciones fav y search
+  // elimino el valor que la usuaria ha escrito en el input
 
 function handleResetClick(event) {
   event.preventDefault();
-  console.log('soy el botón reset y me has clicado');
   favArray = [];
-
-  // const markedItems = document.querySelectorAll('.fav_drink');
-  // for (const markedI of markedItems) {
-  //   // markedI.classList.remove('fav_drink');
-  // };
-  // paintFav de nuevo
   paintFavDrinks();
-  // SL de nuevo
   setFavLocalStorage();
   favSection.classList.add('hidden');
   searchSection.classList.add('hidden');
   searchInput.value = ''
 };
 
-// escuchar el botón
+// evento click sobre el botón reset
+
 resetBtn.addEventListener('click', handleResetClick);
