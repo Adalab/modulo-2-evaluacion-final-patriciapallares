@@ -10,8 +10,6 @@ function getFavLocalStorage() {
     const parseDrinks = JSON.parse(LSDrinks);
     favArray = parseDrinks;
     paintFavDrinks();
-    if (favArray.length > 0) {
-      favSection.classList.remove('hidden');
-    };
+    paintFavIf();
   };
 };
