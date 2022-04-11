@@ -10,7 +10,6 @@ function handleFavBtnClick(event) {
   const markedItems = document.querySelectorAll('.fav_drink');
   for (const markedI of markedItems) {
     if (parseInt(nameBtnSelected) === parseInt(markedI.id)) {
-      console.log('NO soy una igualdad pero me cumplo');
       markedI.classList.remove('fav_drink');
     };
   };
