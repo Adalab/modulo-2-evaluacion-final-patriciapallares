@@ -12,14 +12,11 @@ let favArray = [];
 let notFavHtml = '';
 
 
-
+// función manejadora del evento click sobre las bebidas
+  //
 function handleClickDrinks(event) {
-  // console.log('soy un click en las bebidas');
-  // console.log(event.currentTarget.id);
   // 3.1.1 Color de fondo y de fuente cambian.
 
-  // 16:05 me toca comentar esto:
-  // event.currentTarget.classList.toggle('fav_drink');
   event.currentTarget.classList.add('fav_drink');
   // 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda
   const idDrinkSelected = event.currentTarget.id;
