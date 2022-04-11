@@ -1,28 +1,13 @@
 // 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda
 
-// funciona tal cual, no cambiar_
-// function paintSearchDrinks() {
-//   let html = '';
-//   for (const searchItem of searchArray) {
-//     const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${searchItem.drinkName}`;
+// función para pintar un objeto de searchArray
+  // declaro un placeholder
+  // uso DOM para interrelacionar elementos con madres, clases, atributos, etc.
+  // compruebo si el valor de thumbnail existe o no 
+    // si sí existe: dejo la url como src de la imagen
+    // si no existe: uso el placeholder como src de la imagen
+  // retorno li
 
-//     html += `<li class ="drink_li js_drink_search_item" id=${searchItem.drinkId}>`;
-//     html += `<article class="drink_article special">`;
-//     // 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
-//     if (searchItem.thumbnail !== '') {
-//       html += `<img class ="drink_image" src="${searchItem.thumbnail}">`;
-//     } else {
-//       html += `<img class ="drink_image" src="${placeholder}">`;
-//     }
-//     html += `<h3 class="drink_title">${searchItem.drinkName}</h3>`;
-//     html += `</article>`;
-//     html += `</li>`;
-//   }
-//   searchList.innerHTML = html;
-//   listenerDrinkItem();
-// }
-
-//functions
 // 2.5 Pintar en HTML con innerHTML o DOM.
 function renderDrink(data) {
   const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${data.drinkName}`;
@@ -55,6 +40,14 @@ function renderDrink(data) {
 
   return li;
 }
+
+// función para pintar los objetos de searchArray
+  // hago innerHTML en la ul de search con valor vacío
+  // bucle para recorrer searchArray
+    // declaro drink como cada objeto pintado al ejecutar renderDrink
+    // inserto drink a la ul de search
+  // ejecuto: 
+    // función para escuchar el evento click sobre las bebidas
 
 function renderDrinksList() {
   searchList.innerHTML = '';
