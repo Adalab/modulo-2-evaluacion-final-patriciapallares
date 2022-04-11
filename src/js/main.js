@@ -19,29 +19,16 @@ function handleClickDrinks(event) {
   // 16:05 me toca comentar esto:
   // event.currentTarget.classList.toggle('fav_drink');
   event.currentTarget.classList.add('fav_drink');
+¡
 
   // 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda
-  // escuchar cuando clicamos la bebida
-  // obtener a qué bebida le doy click
-  // agregar al listado de favs
-
   const idDrinkSelected = event.currentTarget.id;
-  // console.log(searchArray);
-
-  // método find para encontrar el elemento entero
-  // previamente filter, pero mejor que me devuelva el elemento no sé.
-  // dayana me ha ayudado a corregir lo de item.drinkId, no .id :D
   const drinkFound = searchArray.find(
     (item) => item.drinkId === idDrinkSelected
   );
-  // console.log(drinkFound);
-
   const favDrinkFoundI = favArray.findIndex(
     (item) => item.drinkId === idDrinkSelected
   );
-  // console.log(favDrinkFoundI);
-
-  // condición para que si el objeto no está en favoritos sea incorporado,( y si sí está en favoritos, que lo quite.) (ya llegará)
   if (favDrinkFoundI === -1) {
     favArray.push(drinkFound);
     event.currentTarget.classList.add('fav_drink');
@@ -51,8 +38,7 @@ function handleClickDrinks(event) {
   }
   paintFavDrinks();
   setFavLocalStorage();
-  // console.log(favArray);
-}
+};
 
 // 3.1 Click sobre un cocktail
 function listenerDrinkItem() {
@@ -70,9 +56,9 @@ function listenerDrinkItem() {
 
     if (favIndex !== -1) {
       drink.classList.add('fav_drink');
-    }
-  }
-}
+    };
+  };
+};
 
 
 function handleSearchClick(event) {
@@ -82,9 +68,10 @@ function handleSearchClick(event) {
   favSection.classList.remove('hidden');
 };
 
-// la ejecuto cuando se carga la página
 getFavLocalStorage();
 
+
 //events
+
 
 searchBtn.addEventListener('click', handleSearchClick);
