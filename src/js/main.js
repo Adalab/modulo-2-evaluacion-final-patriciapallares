@@ -14,8 +14,6 @@ let notFavHtml = '';
 
 
 function handleClickDrinks(event) {
-  // 3.1.1 Color de fondo y de fuente cambian.
-  event.currentTarget.classList.add('fav_drink');
   // 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda
   const idDrinkSelected = event.currentTarget.id;
   const drinkFound = searchArray.find(
@@ -25,6 +23,7 @@ function handleClickDrinks(event) {
     (item) => item.drinkId === idDrinkSelected
   );
   if (favDrinkFoundI === -1) {
+    // 3.1.1 Color de fondo y de fuente cambian.
     favArray.push(drinkFound);
     event.currentTarget.classList.add('fav_drink');
   } else {
