@@ -76,6 +76,8 @@ function handleSearchClick(event) {
   searchSection.classList.remove('hidden');
   favSection.classList.remove('hidden');
   paintFavIf();
+  // así la user no tiene que borrar el campo cada vez que escriba algo nuevo
+  searchInput.value = ''
 };
 
 getFavLocalStorage();
