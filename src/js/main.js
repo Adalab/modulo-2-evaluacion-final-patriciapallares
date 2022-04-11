@@ -11,22 +11,10 @@ let searchArray = [];
 let favArray = [];
 let notFavHtml = '';
 
-function paintFavIf(){
-  console.log(favArray.length);
-  if (favArray.length === 0){
-   favSection.classList.add('hidden');
- }else{
-   favSection.classList.remove('hidden');
- }
-}
+
 
 function handleClickDrinks(event) {
-  // console.log('soy un click en las bebidas');
-  // console.log(event.currentTarget.id);
   // 3.1.1 Color de fondo y de fuente cambian.
-
-  // 16:05 me toca comentar esto:
-  // event.currentTarget.classList.toggle('fav_drink');
   event.currentTarget.classList.add('fav_drink');
   // 3.1.2 Listado de favoritos en la parte izq de la pantalla, bajo el input de búsqueda
   const idDrinkSelected = event.currentTarget.id;
@@ -43,7 +31,7 @@ function handleClickDrinks(event) {
     // 5.2 Borrar de favoritos de la lista al clicar sobre la bebida en la lista de búsqueda
     favArray.splice(favDrinkFoundI, 1);
     event.currentTarget.classList.remove('fav_drink');
-  }
+  };
   paintFavDrinks();
   setFavLocalStorage();
   paintFavIf();
@@ -51,24 +39,17 @@ function handleClickDrinks(event) {
 
 // 3.1 Click sobre un cocktail
 function listenerDrinkItem() {
-  // console.log(searchArray);
   const liDrinks = document.querySelectorAll('.js_drink_search_item');
   for (const drink of liDrinks) {
     drink.addEventListener('click', handleClickDrinks);
-
-    // que me mantenga los estilos de fav en siguientes búsquedas
-    // supongo que esto podría estar en una función fuera, vamos a ver si funciona
     const favIndex = favArray.findIndex((fav) => {
       return fav.drinkId === drink.id;
     });
-    // console.log(favIndex);
-
     if (favIndex !== -1) {
       drink.classList.add('fav_drink');
     };
   };
 };
-
 
 function handleSearchClick(event) {
   event.preventDefault();
@@ -76,14 +57,9 @@ function handleSearchClick(event) {
   searchSection.classList.remove('hidden');
   favSection.classList.remove('hidden');
   paintFavIf();
-  // así la user no tiene que borrar el campo cada vez que escriba algo nuevo
-  searchInput.value = ''
+  searchInput.value = '';
 };
 
 getFavLocalStorage();
-
-
-//events
-
 
 searchBtn.addEventListener('click', handleSearchClick);
