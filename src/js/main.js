@@ -40,6 +40,7 @@ function handleClickDrinks(event) {
     favArray.push(drinkFound);
     event.currentTarget.classList.add('fav_drink');
   } else {
+    // 5.2 Borrar de favoritos de la lista al clicar sobre la bebida en la lista de búsqueda
     favArray.splice(favDrinkFoundI, 1);
     event.currentTarget.classList.remove('fav_drink');
   }

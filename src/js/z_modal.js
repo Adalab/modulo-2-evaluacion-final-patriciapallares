@@ -1,4 +1,5 @@
-'use strict';
+// 7.1 Bebe con precaución: Modal moral
+
 const modal = document.querySelector('.js_modal');
 const closeBtn = document.querySelector('.js_close_btn');
 

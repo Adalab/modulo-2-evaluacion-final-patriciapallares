@@ -74,7 +74,7 @@ La prioridad es tener un JS sólido.
 
 6. BONUS. Afinar maquetación
 
-   - [x] 6.1 Añadir estilos libremente (que los items estén a la misma altura)
+   - [x] 6.1 Añadir estilos libremente
 
 7. BONUS MÍO:
    - [x] 7.1 Bebe con precaución: Modal moral

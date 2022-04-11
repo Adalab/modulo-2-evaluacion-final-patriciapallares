@@ -25,7 +25,7 @@ function handleFavBtnClick(event) {
     console.log(nameBtnSelected);
 
     // me saca del atoramiento por ahora
-    if (parseInt(nameBtnSelected) !== parseInt(markedI)) {
+    if (parseInt(nameBtnSelected) === parseInt(markedI.id)) {
       console.log('NO soy una igualdad pero me cumplo');
       markedI.classList.remove('fav_drink');
     };

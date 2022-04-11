@@ -23,7 +23,7 @@
 // }
 
 //functions
-
+// 2.5 Pintar en HTML con innerHTML o DOM.
 function renderDrink(data) {
   const placeholder = `https://via.placeholder.com/210x295/ffffff/666666/?text=${data.drinkName}`;
 
