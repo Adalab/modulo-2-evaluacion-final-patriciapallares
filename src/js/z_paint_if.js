@@ -4,5 +4,5 @@ function paintFavIf() {
     favSection.classList.add('hidden');
   } else {
     favSection.classList.remove('hidden');
-  }
-}
+  };
+};
