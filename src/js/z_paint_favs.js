@@ -1,3 +1,14 @@
+// función para pintar fav
+  // declaro la variable html vacía
+  // bucle para recorrer favArray
+    // declaro un placeholder
+    // compruebo si el valor de thumbnail existe o no 
+      // si sí existe: dejo la url como src de la imagen
+      // si no existe: uso el placeholder como src de la imagen
+  // hago innerHTML en la ul de favoritos
+  // ejecuto:
+    // función para escuchar el evento click sobre el botón x (borrar una bebida fav)
+
 function paintFavDrinks() {
   let html = '';
 
