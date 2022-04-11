@@ -17,6 +17,7 @@ function fetchFunction() {
         return newDrink;
       });
       // no me las pintaba dentro de la función handleSearchClick pero sí aquí.
-      paintSearchDrinks();
+      renderDrinksList();
+      // paintSearchDrinks();
     });
 };

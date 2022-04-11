@@ -53,7 +53,7 @@ La prioridad es tener un JS sólido.
    - [x] 2.2 Recoger el texto de la usuaria para construir la URL de búsqueda.
    - [x] 2.3 Pintar una tarjeta con la imágen y nombre de la bebida por cada item que coincida con la búsqueda.
    - [x] 2.4 Usar una imagen placeholder en caso que la bebida devuelta por la API no tenga una
-   - [ ] 2.5 Pintar en HTML con innerHTML o DOM.
+   - [x] 2.5 Pintar en HTML con innerHTML o DOM.
 
 3. Favoritos
 
@@ -69,7 +69,6 @@ La prioridad es tener un JS sólido.
 5. BONUS. Borrar favoritos
 
    - [x] 5.1 Borrar el favorito de la lista y de LS al hacer click sobre una x
-         Añadir x a favs, evento sobre el click a la x, este hace que se borre de favArray y del storage. CÓMO SABE LA X A QUIÉN ME REFIERO, ¿con ID?
    - [x] 5.2 Borrar de favoritos de la lista al clicar sobre la bebida en la lista de búsqueda
    - [x] 5.3 Botón de reset que borra favoritos, lista, estilos y SL
 
