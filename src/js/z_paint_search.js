@@ -24,6 +24,20 @@ function renderDrink(data) {
   h3.classList.add('drink_title');
   const texth3 = document.createTextNode(data.drinkName);
   h3.appendChild(texth3);
+
+  const text = document.createElement('p');
+  article.appendChild(text);
+  if (data.drinkTag !== null) {
+    if (data.drinkTag.includes('Fruity') ) {
+      const textFru = document.createTextNode('Sabor afrutado');
+      text.appendChild(textFru);
+    } else {
+      const textNoFru = document.createTextNode('No es afrutado');
+      text.appendChild(textNoFru);
+    };
+  };
+
+
   return li;
 };
 

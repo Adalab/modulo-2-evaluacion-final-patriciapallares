@@ -11,9 +11,11 @@ function fetchFunction() {
           thumbnail: drink.strDrinkThumb,
           drinkName: drink.strDrink,
           drinkId: drink.idDrink,
+          drinkTag: drink.strTags,
         };
         return newDrink;
       });
       renderDrinksList();      // paintSearchDrinks();
     });
 };
+
