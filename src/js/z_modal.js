@@ -7,5 +7,5 @@ const showModal = () => {
 const closeModal = () => {
   modal.classList.add('hidden');
 };
-// setTimeout(showModal, 5000);
+setTimeout(showModal, 5000);
 closeBtn.addEventListener('click', closeModal);
