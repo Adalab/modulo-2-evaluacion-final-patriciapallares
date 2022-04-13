@@ -26,7 +26,9 @@ function handleClickDrinks(event) {
     // 3.1.1 Color de fondo y de fuente cambian.
     // favArray.push(drinkFound);
     event.currentTarget.classList.add('fav_drink');
-    console.log(drinkFound.drinkName);
+    favArray.push(drinkFound);
+    // interview:
+    // console.log(drinkFound.drinkName);
   } else {
     // 5.2 Borrar de favoritos de la lista al clicar sobre la bebida en la lista de búsqueda
     favArray.splice(favDrinkFoundI, 1);

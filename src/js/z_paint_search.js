@@ -25,6 +25,9 @@ function renderDrink(data) {
   const texth3 = document.createTextNode(data.drinkName);
   h3.appendChild(texth3);
 
+
+  // interview 
+  /*
   const text = document.createElement('p');
   article.appendChild(text);
   if (data.drinkTag !== null) {
@@ -36,7 +39,7 @@ function renderDrink(data) {
       text.appendChild(textNoFru);
     };
   };
-
+  */
 
   return li;
 };
